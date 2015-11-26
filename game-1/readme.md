@@ -25,6 +25,6 @@
 
 ---
 
-##### GitHub pages Link > Let's play
+##### GitHub pages
 
-<a src="http://phnxdaniel.github.io/project-00/game-1/">
+[link](http://phnxdaniel.github.io/project-00/game-1/)
