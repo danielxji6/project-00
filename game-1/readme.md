@@ -25,6 +25,6 @@
 
 ---
 
-##### Link to hosted project on GitHub pages or BitBalloon (optional)
+##### GitHub pages Link > Let's play
 
 <a src="http://phnxdaniel.github.io/project-00/game-1/">
