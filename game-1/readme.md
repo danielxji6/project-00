@@ -2,7 +2,7 @@
 
 *This is my first web game and the it took me about 3 hours to build.*
 *Hope you like it.*
-*Game play: player one will use Q, player two will use P and space will paused the game*
+*Game play: player one will use Q, player two will use P and B will paused the game*
 
 ## Technologies Used
 
@@ -22,8 +22,6 @@
 ## Planned Features
 
 *turbo: increase step per keypress*
-
----
 
 ##### Link to hosted project on GitHub pages or BitBalloon (optional)
 

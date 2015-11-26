@@ -25,11 +25,12 @@ $(function() {
   }
 
   $(document).keypress(function (ele) {
+    console.log(ele);
     if(ele.keyCode === 113) { // if Q pressed
       draw(1, positionOne);
     } else if(ele.keyCode === 112) { // if P pressed
       draw(2, positionTwo);
-    } else if(ele.keyCode === 32) { //if space pressed
+    } else if(ele.keyCode === 98) { //if space pressed
       pausedCheck();
     }
   });
