@@ -15,8 +15,8 @@
 ## Existing Features
 
 *paused*
-*flip image*
-*winner check*
+*flip-image*
+*winner-check*
 *reset*
 
 ## Planned Features
