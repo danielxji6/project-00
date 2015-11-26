@@ -15,14 +15,20 @@
 ## Existing Features
 
 *paused*
-*flip image*
-*winner check*
+*flip-image*
+*winner-check*
 *reset*
 
 ## Planned Features
 
 *turbo: increase step per keypress*
 
+<<<<<<< HEAD
 ##### Link to hosted project on GitHub pages or BitBalloon (optional)
+=======
+---
 
-<a src="http://phnxdaniel.github.io/project-00/game-1/">
+##### GitHub pages
+>>>>>>> 0127e82bb70d321de75a5669e524bb90bd7ce823
+
+[link](http://phnxdaniel.github.io/project-00/game-1/)
