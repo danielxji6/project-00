@@ -25,7 +25,6 @@ $(function() {
   }
 
   $(document).keypress(function (ele) {
-    console.log(ele);
     if(ele.keyCode === 113) { // if Q pressed
       draw(1, positionOne);
     } else if(ele.keyCode === 112) { // if P pressed
@@ -52,7 +51,6 @@ function draw(player, position) {
     $(boxLoc[position]).append(img2);
     winnerCheck();
   }
-
   if (position > 10 && position < 23) {
     $('.car' + player).addClass('flipped');
   }
@@ -76,9 +74,9 @@ function reset() {
   $('img').remove();
   $('.box:eq('+ 0 +')').append(img1);
   $('.box:eq('+ 0 +')').append(img2);
+  $('.winner').html('Let\'s race! <i class="fa fa-pause"></i>');
   $('.fa').hide();
   paused = false;
   positionOne = 1;
   positionTwo = 1;
-  $('.winner').text("Let's race");
 }
