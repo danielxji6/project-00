@@ -6,22 +6,22 @@
 
 ## Technologies Used
 
-*JS:*
-*keypress()*
-*append()*
-*click()*
-*toggle()*
+1. JS:*
+2. keypress()
+3. append()
+4. click()
+5. toggle()
 
 ## Existing Features
 
-*paused*
-*flip-image*
-*winner-check*
-*reset*
+1. paused
+2. flip-image
+3. winner-check
+4. reset
 
 ## Planned Features
 
-*turbo: increase step per keypress*
+turbo: increase step per keypress
 
 ##### GitHub pages
 
