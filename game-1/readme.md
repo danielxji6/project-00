@@ -1,18 +1,30 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Dǝqnƃƃᴉuƃ Challenges
+# Racing Game 01
 
-These challenges are for <a href="https://github.com/sf-wdi-24/modules/blob/master/week-02-ajax-and-js-objects/day-01/module-01/readme.md" target="_blank">today's lesson on debugging</a>.
+*This is my first web game and the it took me about 3 hours to build.*
+*Hope you like it.*
+*Game play: player one will use Q, player two will use P and space will paused the game*
 
-Fork -> Clone this repo, then open the index.html.
+## Technologies Used
 
-The `index.html` will include a single JavaScript library `main.js`.
+*JS:*
+*keypress()*
+*append()*
+*click()*
+*toggle()*
 
-Your job is to use the Chrome Developer tools to debug the execution flow in the JavaScript code. When you find a bug, add a comment on the line above the bug showing the current value of the code which has a bug and what the value should be. Then fix the line to the best of your abilities.
+## Existing Features
 
-The function is somewhat illogical - it is OK to remove non essential functionality. The most important part is to use the JavaScript Debugger to accomplish this challenge quickly.
+*paused*
+*flip image*
+*winner check*
+*reset*
 
-The solution is found on the `solution` branch.
+## Planned Features
 
-## Bonus Challenges
+*turbo: increase step per keypress*
 
-* Use the JavaScript Profiler to compare a `for` loop and a `forEach` loop. Which is faster? Find someone to share the results with.
-* Use the JavaScript Auditor on <a href="https://generalassemb.ly" target="_blank">General Assembly's Site</a> then research solutions to any perceived deficiency in the site.
+---
+
+##### Link to hosted project on GitHub pages or BitBalloon (optional)
+
+<a src="http://phnxdaniel.github.io/project-00/game-1/">
