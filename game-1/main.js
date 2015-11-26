@@ -1,4 +1,3 @@
-// wait for DOM to load before running JS
 console.log("Loaded!");
 
 var img1 = '<img class="car1 img-responsive" src="./img/car1.png">';
@@ -8,14 +7,16 @@ var positionTwo = 1;
 var paused = false;
 var boxLoc = [];
 
+// wait for DOM to load before running JS
 $(function() {
-  // inital
+  // inital condition
   $('.box:eq('+ 0 +')').append(img1);
   $('.box:eq('+ 0 +')').append(img2);
   $('.fa').hide();
   $('.reset').on("click", function handleButton() {
     reset();
   });
+  // set the box order
   for (var i = 0; i < $('.box').length; i++) {
     if (i > 12 && i < 23) {
       boxLoc[i] = '.box:eq('+ (35 - i) +')';
@@ -34,8 +35,6 @@ $(function() {
     }
   });
 });
-
-
 
 function draw(player, position) {
   if(paused) {
