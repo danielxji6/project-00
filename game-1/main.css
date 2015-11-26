@@ -1,11 +1,14 @@
 #ground {
   margin-top: 10px;
-  height: 800px;
+  height: 700px;
+  border: 10px solid black;
 }
 
 .box {
-  border: 1px solid black;
+  background-image: url('img/gress.jpg');
   height: 80px;
+  background-size: 80px 60px;
+  background-repeat: no-repeat;
 }
 .flipped {
     transform: scale(-1, 1);

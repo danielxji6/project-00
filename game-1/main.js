@@ -6,28 +6,35 @@ var img2 = '<img class="car2 img-responsive" src="./img/car2.png">';
 var positionOne = 1;
 var positionTwo = 1;
 var paused = false;
+var boxLoc = [];
 
 $(function() {
   // inital
   $('.box:eq('+ 0 +')').append(img1);
   $('.box:eq('+ 0 +')').append(img2);
   $('.fa').hide();
-
   $('.reset').on("click", function handleButton() {
     reset();
   });
+  for (var i = 0; i < $('.box').length; i++) {
+    if (i > 12 && i < 23) {
+      boxLoc[i] = '.box:eq('+ (35 - i) +')';
+    } else {
+      boxLoc[i] = '.box:eq('+ i +')';
+    }
+  }
+
+  $(document).keypress(function (ele) {
+    if(ele.keyCode === 113) { // if Q pressed
+      draw(1, positionOne);
+    } else if(ele.keyCode === 112) { // if P pressed
+      draw(2, positionTwo);
+    } else if(ele.keyCode === 32) { //if space pressed
+      pausedCheck();
+    }
+  });
 });
 
-$(document).keypress(function (ele) {
-  if(ele.keyCode === 113) { // if Q pressed
-    draw(1, positionOne);
-  } else if(ele.keyCode === 112) { // if P pressed
-    draw(2, positionTwo);
-  } else if(ele.keyCode === 32) { //if space pressed
-    pausedCheck();
-  }
-  winnerCheck();
-});
 
 
 function draw(player, position) {
@@ -36,13 +43,17 @@ function draw(player, position) {
   } else if(player === 1 && position < 36) {
     positionOne += 1;
     $('img').remove('.car1');
-    $('.box:eq('+ position +')').append(img1);
+    $(boxLoc[position]).append(img1);
     winnerCheck();
   } else if(player === 2 && position < 36) {
     positionTwo += 1;
     $('img').remove('.car2');
-    $('.box:eq('+ position +')').append(img2);
+    $(boxLoc[position]).append(img2);
     winnerCheck();
+  }
+
+  if (position > 10 && position < 23) {
+    $('.car' + player).addClass('flipped');
   }
 }
 
@@ -64,8 +75,9 @@ function reset() {
   $('img').remove();
   $('.box:eq('+ 0 +')').append(img1);
   $('.box:eq('+ 0 +')').append(img2);
-  paused = false;
   $('.fa').hide();
+  paused = false;
   positionOne = 1;
   positionTwo = 1;
+  $('.winner').text("Let's race");
 }
