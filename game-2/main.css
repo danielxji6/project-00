@@ -5,16 +5,7 @@
 }
 
 .box {
-  background-image: url('img/gress.jpg');
-  height: 80px;
-  background-size: 80px 60px;
-  background-repeat: no-repeat;
-}
-.flipped {
-    transform: scale(-1, 1);
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -khtml-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
+  wdith: 100px
+  height: 100px;
+  margin: 30px 0 0 0;
 }

@@ -28,7 +28,9 @@ $(function() {
       }
     }
     if(ele.keyCode === 87) { // if W pressed
-      players[1].jumping = true;
+      if(players[1].jumpHeight === 0) {
+        players[1].jumping = true;
+      }
     }
     if(ele.keyCode === 80) { //if P pressed
       paused = !paused;
@@ -50,14 +52,23 @@ $(function() {
   function winnerCheck() {
     //greetWinner
     for (var i = 0; i < players.length; i++) {
-      if(players[i].rounds > 20) {
+      if(players[i].rounds > 2) {
         stop = true;
+        players[i].wins += 1;
+        grounds[i].drawWin();
         console.log("Winner is Player" + i);
       }
     }
   }
   function reset() {
-    //reset
+    pasued = false;
+    stop = false;
+    for (var i = 0; i < players.length; i++) {
+      players[i].speed = 2;
+      players[i].rounds = 0;
+      grounds[i].offset = 801;
+      grounds[i].coin.crashed = false;
+    }
   }
 
   var Player = function (color, ctx) {
@@ -67,7 +78,7 @@ $(function() {
     this.y = 200;
     this.radius = 50;
     this.go = false;
-    this.speed = 1;
+    this.speed = 2;
     this.rounds = 0;
     this.jumping = false;
     this.jumpHeight = 0;
@@ -130,6 +141,26 @@ $(function() {
       ctx.stroke();
       ctx.restore();
     },
+    drawText: function (wins, speed) {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.font = "25px Arial";
+      ctx.fillText("Wins: " + wins, 650, 50);
+      ctx.fillText("Turbo > " + (speed*50), 300, 50);
+      ctx.restore();
+    },
+    drawWin: function () {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.fillStyle = "#000000";
+      ctx.translate(width/2, height/2);
+      ctx.beginPath();
+      ctx.arc(0, 0, 50, 0, Math.PI * 2, false);
+      ctx.stroke();
+      ctx.font = "25px Arial";
+      ctx.strokeText("Win!", -25, 10);
+      ctx.restore();
+    },
     drawCoin: function () {
       var ctx  = this.ctx;
       eatCoin();
@@ -151,7 +182,6 @@ $(function() {
 
   function eatCoin(player, ground) {
     for (var i = 0; i < players.length; i++) {
-      // console.log("inside eatCoin");
       var coinX = grounds[i].coin.x - grounds[i].offset;
       var coinY = grounds[i].coin.y - grounds[i].coin.height;
       var playerX = players[i].x;
@@ -176,6 +206,7 @@ $(function() {
   function draw() {
     ctx1.clearRect(0, 0, width, height);
     ctx2.clearRect(0, 0, width, height);
+    winnerCheck();
     for (var i = 0; i < players.length; i++) {
       if(grounds[i].offset > 800) {
         grounds[i].offset = 0;
@@ -189,12 +220,13 @@ $(function() {
       }
       players[i].drawPlayer();
       grounds[i].drawGround();
+      grounds[i].drawText(players[i].wins, players[i].speed);
       grounds[i].drawCoin();
     }
   }
 
   function start() {
-    if(!paused) {
+    if(!paused && !stop) {
       draw();
     }
     window.requestAnimationFrame(start);
