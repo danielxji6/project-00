@@ -1,15 +1,15 @@
 # PAC-MAN EX Racing
 
-*This is my third game which is from game-2 but will more functions.
-*
-*For Player1 will use "right" to move, "up" to jump.
-*For Player2 will use "D" to move, "W" to jump.
-*When you get a coin you will speed up.
-*Button work as they show.
+This is my third game which is from game-2 but will more functions.
+
+For Player1 will use "right" to move, "up" to jump.
+For Player2 will use "D" to move, "W" to jump.
+When you get a coin you will speed up.
+Button work as they show.
 
 ## Technologies Used
 
-*JS:*
+JS:
 1. canvas
 2. keydown()
 3. keyup()
