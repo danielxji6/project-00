@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="main.css">
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Fun icon -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <script src="main.js"></script>
+
+  <title>Race Game 3</title>
+</head>
+<body>
+    <div class="container text-center">
+    <div class="col-xs-8">
+      <h1>PAC-MAN EX Racing<small> press <strong>"P"</strong> to paused <i class="fa fa-pause fa-lg"></i> </small></h1>
+    </div>
+    <div class="col-xs-3 box">
+      <button class="btn btn-primary round" type="button">Next Round</button>
+      <button class="btn btn-success reset" type="button">Reset</button>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <h2 class="winner">Player1  use <i class="fa fa-arrow-right"></i> to go, <i class="fa fa-arrow-up"></i> to jump</h2>
+      <canvas width=800 height=350 id="ground1"></canvas>
+      <button class="btn btn-default color" type="button">Change Color</button>
+      <button class="btn btn-default bot" type="button">Bot Off</button>
+      <h2 class="winner">Player2  use <strong>D</strong> to go, <strong>W</strong> to jump</h2>
+      <canvas width=800 height=350 id="ground2"></canvas>
+      <button class="btn btn-default color" type="button">Change Color</button>
+      <button class="btn btn-default bot" type="button">Bot Off</button>
+    </div>
+  </div>
+</body>
+</html>
