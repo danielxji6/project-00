@@ -2,15 +2,17 @@ console.log("Loaded!");
 
 // wait for DOM to load before running JS
 $(function() {
-  // inital condition
+  // basic settting
   var canvas1 = document.getElementById('ground1');
   var ctx1 = canvas1.getContext('2d');
   var canvas2 = document.getElementById('ground2');
   var ctx2 = canvas2.getContext('2d');
   var width = canvas1.width;
   var height = canvas1.height;
+
   var paused = false;
   var stop = false;
+
   $('.reset').on("click", function handleButton() {
     reset();
   });
@@ -23,12 +25,12 @@ $(function() {
       players[1].go = true;
     }
     if(ele.keyCode === 38) { // if ^ pressed
-      if(players[0].jumpHeight === 0) {
+      if(players[0].jumpHeight < 5) {
         players[0].jumping = true;
       }
     }
     if(ele.keyCode === 87) { // if W pressed
-      if(players[1].jumpHeight === 0) {
+      if(players[1].jumpHeight < 5) {
         players[1].jumping = true;
       }
     }
@@ -50,16 +52,15 @@ $(function() {
   });
 
   function winnerCheck() {
-    //greetWinner
     for (var i = 0; i < players.length; i++) {
-      if(players[i].rounds > 2) {
+      if(players[i].rounds > 20) {
         stop = true;
         players[i].wins += 1;
         grounds[i].drawWin();
-        console.log("Winner is Player" + i);
       }
     }
   }
+
   function reset() {
     pasued = false;
     stop = false;
@@ -68,6 +69,21 @@ $(function() {
       players[i].rounds = 0;
       grounds[i].offset = 801;
       grounds[i].coin.crashed = false;
+    }
+  }
+
+  function eatCoin(player, ground) {
+    for (var i = 0; i < players.length; i++) {
+      var coinX = grounds[i].coin.x - grounds[i].offset;
+      var coinY = grounds[i].coin.y - grounds[i].coin.height;
+      var playerX = players[i].x;
+      var playerY = players[i].y - players[i].jumpHeight;
+      if (playerX < coinX + grounds[i].coin.radius*2 &&
+          playerX + players[i].radius*2 > coinX &&
+          playerY < coinY + grounds[i].coin.radius*3 &&
+          playerY + players[i].radius*2 > coinY) {
+          grounds[i].coin.crashed = true;
+      }
     }
   }
 
@@ -180,26 +196,11 @@ $(function() {
     }
   };
 
-  function eatCoin(player, ground) {
-    for (var i = 0; i < players.length; i++) {
-      var coinX = grounds[i].coin.x - grounds[i].offset;
-      var coinY = grounds[i].coin.y - grounds[i].coin.height;
-      var playerX = players[i].x;
-      var playerY = players[i].y - players[i].jumpHeight;
-      if (playerX < coinX + grounds[i].coin.radius*2 &&
-          playerX + players[i].radius*2 > coinX &&
-          playerY < coinY + grounds[i].coin.radius*3 &&
-          playerY + players[i].radius*2 > coinY) {
-          grounds[i].coin.crashed = true;
-      }
-    }
-  }
-
   var players = [];
   var grounds = [];
 
-  players.push(new Player("#141414", ctx1));
-  players.push(new Player("#080808", ctx2));
+  players.push(new Player("#000080", ctx1));
+  players.push(new Player("#004d00", ctx2));
   grounds.push(new Ground(ctx1));
   grounds.push(new Ground(ctx2));
 
