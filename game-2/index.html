@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="main.css">
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Fun icon -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <script src="main.js"></script>
+
+  <title>Race Game 2</title>
+</head>
+<body>
+    <div class="container text-center">
+    <div class="col-md-12 row">
+      <h1>Race Game 2 <small> <strong>"P"</strong> to paused</small></h1>
+    </div>
+    <div class="col-md-12 row">
+      <button class="btn btn-primary reset" type="button">RESET</button>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h2 class="winner">Player1  use <i class="fa fa-arrow-right"></i> to go, <i class="fa fa-arrow-up"></i> to jump</h2>
+      <canvas width=800 height=350 id="ground1"></canvas>
+      <h2 class="winner">Player2  use <strong>D</strong> to go, <strong>W</strong> to jump</h2>
+      <canvas width=800 height=350 id="ground2"></canvas>
+    </div>
+  </div>
+</body>
+</html>
