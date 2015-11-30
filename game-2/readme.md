@@ -1,14 +1,14 @@
-# Racing Game 01
+# Racing Game 02
 
-This is my second game and this one I use canvas to have the playground.
-For Player1 will use "right" to move, "up" to jump.
-For Player2 will use "D" to move, "W" to jump.
-When you get a coin you will speed up.
+*This is my second game and this one I use canvas to have the playground.
+*For Player1 will use "right" to move, "up" to jump.
+*For Player2 will use "D" to move, "W" to jump.
+*When you get a coin you will speed up.
 
 
 ## Technologies Used
 
-JS:
+*JS:*
 1. canvas
 2. keydown()
 3. keyup()
