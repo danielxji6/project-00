@@ -40,4 +40,4 @@ JS:
 
 ### GitHub pages
 
-[link](http://phnxdaniel.github.io/project-00/game-3/)
+[link](http://danielxji6.github.io/project-00/game-3/)
